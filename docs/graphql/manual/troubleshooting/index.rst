@@ -5,7 +5,7 @@ Hasura GraphQL engine may not work as expected and will throw unexpected errors 
 the GraphQL engine are altered using ``psql`` or any other PostgreSQL client.
 
 Hasura GraphQL engine creates and maintains an **internal state** based on the database it is configured to use.
-This internal state will comprise of information about the tables/views, relationships and access control rules
+This internal state will comprise information about the tables/views, relationships and access control rules
 defined on them using Hasura GraphQL engine. See :doc:`Hasura GraphQL engine internals <../engine-internals/index>`
 for information on how this internal state is maintained. It is highly recommended to do any modifications to the
 database schema only through Hasura console to avoid corrupting the GraphQL engine's state.
@@ -20,7 +20,7 @@ database.
 
 For example, you will encounter the above error if you have:
 
-- Created/tracked a table called ``author`` from console.
+- Created/tracked a table called ``author`` from the console.
 - Opened ``psql`` or ``adminer`` or any other PostgreSQL client and deleted ``author`` table.
 - Restarted GraphQL engine.
 
@@ -59,7 +59,7 @@ Let's say we have tables called ``article`` and ``author`` as follows:
 .. image:: ../../../img/graphql/manual/troubleshooting/author_article.jpg
   :alt: article author schema 
 
-Using the console if you have created a relationship with name as ``author`` from ``article`` table to
+Using the console if you have created a relationship with the name as ``author`` from ``article`` table to
 ``author`` table, Hasura GraphQL engine will create a special field ``author`` in the ``article`` table in its
 internal state. This field will be available via the GraphQL interface.
 
